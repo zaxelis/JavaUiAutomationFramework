@@ -4,8 +4,8 @@ Feature: Register Flow Feature Test Suite
     Given Home Page is accessed
     And RegisterPage is accessed from HomePage menu
     When the registration form is completed with valid data
-    And the privacyToggle is enabled
-    And continueBtn is clicked
+    And "privacyToggle" from "RegisterPage" is clicked
+    And "continuebtn" from "RegisterPage" is clicked
     Then the new page url contains "success&language" keyword
 
 
@@ -13,7 +13,7 @@ Feature: Register Flow Feature Test Suite
     Given Home Page is accessed
     And RegisterPage is accessed from HomePage menu
     When the registration form is completed with valid data
-    And the privacyToggle is enabled
+    And "privacyToggle" from "RegisterPage" is clicked
     Then the new page url contains "register" keyword
 
 
@@ -25,6 +25,6 @@ Feature: Register Flow Feature Test Suite
       | lastName  | nume                                                 |
       | email     | email@gmail.com                                      |
       | password  | parola                                               |
-    When continueBtn is clicked
+    When "continuebtn" from "RegisterPage" is clicked
     Then the following error messages are displayed
       | Warning: You must agree to the Privacy Policy! |
